@@ -22,7 +22,7 @@ See the [ZMK documentation](https://zmk.dev/docs/development/setup) for local se
 
 - USB-C cable
 - The firmware `.uf2` files (left and right)
-- Optional: `zmk_clear.uf2` for resetting pairing
+- `settings_reset-nice_nano_v2-zmk.uf2` for resetting pairing (included in build)
 
 ### Steps per half
 
@@ -49,7 +49,7 @@ If you have connection issues between the left and right halves:
 2. **For each half** (start with right):
    - Connect via USB-C
    - Double-tap reset button (bootloader mode)
-   - Copy `zmk_clear.uf2` to `NICENANO`
+   - Copy `settings_reset-nice_nano_v2-zmk.uf2` to `NICENANO`
    - Wait for restart
    - Double-tap reset button again
    - Copy the correct firmware `.uf2`
