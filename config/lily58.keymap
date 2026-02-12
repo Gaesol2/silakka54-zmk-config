@@ -46,7 +46,7 @@
 &none       &kp LS(LEFT_ARROW)  &kp LS(RIGHT_ARROW)  &kp LS(HOME)  &kp LS(END)   &none                         &none         &none         &none            &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PIPE
 &none       &kp LS(UP_ARROW)    &kp LS(DOWN_ARROW)   &none         &none         &none                         &none         &none         &kp KP_MULTIPLY  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp BACKSLASH
 &trans      &trans              &trans               &trans        &trans        &trans        &none    &none  &trans        &none         &kp KP_PLUS      &none             &none              &none
-                                                     &trans        &trans        &trans        &none    &none  &trans        &trans        &trans
+                                                     &kp C_MENU    &trans        &trans        &none    &none  &trans        &trans        &trans
             >;
         };
 
