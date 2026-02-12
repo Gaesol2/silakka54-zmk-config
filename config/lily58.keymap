@@ -61,7 +61,7 @@
             display-name = "Raise";
             bindings = <
 &kp F12  &kp F1          &kp F2          &kp F3           &kp F4  &kp F5                  &kp F6       &kp F7    &kp F8         &kp F9  &kp F10  &kp F11
-&none    &kt LEFT_SHIFT  &kp UP_ARROW    &none            &none   &none                   &kp INSERT   &kp HOME  &kp PAGE_UP    &none   &none    &trans
+&none    &none           &kp UP_ARROW    &none            &none   &none                   &kp INSERT   &kp HOME  &kp PAGE_UP    &none   &none    &trans
 &none    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none   &none                   &kp DELETE   &kp END   &kp PAGE_DOWN  &none   &none    &trans
 &none    &none           &none           &none            &none   &none   &none    &none  &kp KP_PLUS  &none     &none          &none   &none    &none
                                          &trans           &trans  &trans  &none    &none  &trans       &trans    &trans
