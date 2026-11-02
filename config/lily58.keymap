@@ -11,6 +11,17 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {
+        layer_1: layer_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER_1";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&tog 1>;
+
+            tapping-term-ms = <250>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -25,11 +36,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3    &kp N4        &kp N5                  &kp N6     &kp N7  &kp N8            &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB           &kp Q   &kp W   &kp E     &kp R         &kp T                   &kp Y      &kp U   &kp I             &kp O    &kp P     &kp MINUS
-&kp LEFT_SHIFT    &kp A   &kp S   &kp D     &kp F         &kp G                   &kp H      &kp J   &kp K             &kp L    &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp V         &kp B   &none    &none  &kp N      &kp M   &kp COMMA         &kp DOT  &kp FSLH  &kp ENTER
-                                  &kp LGUI  &kp LEFT_ALT  &mo 1   &none    &none  &kp SPACE  &mo 2   &kp LANG_HANGEUL
+&kp ESC           &kp N1  &kp N2  &kp N3    &kp N4        &kp N5                    &kp N6     &kp N7  &kp N8            &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB           &kp Q   &kp W   &kp E     &kp R         &kp T                     &kp Y      &kp U   &kp I             &kp O    &kp P     &kp MINUS
+&kp LEFT_SHIFT    &kp A   &kp S   &kp D     &kp F         &kp G                     &kp H      &kp J   &kp K             &kp L    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp V         &kp B     &none    &none  &kp N      &kp M   &kp COMMA         &kp DOT  &kp FSLH  &kp ENTER
+                                  &kp LGUI  &kp LEFT_ALT  &layer_1  &none    &none  &kp SPACE  &mo 2   &kp LANG_HANGEUL
             >;
         };
 
@@ -44,7 +55,7 @@
             display-name = "Lower";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0        &bt BT_SEL 1        &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4                  &out OUT_USB    &none           &none            &kp PLUS          &kp EQUAL          &kp TILDE
-&tog 1      &kp LS(HOME)        &kp LS(UP_ARROW)    &kp LS(END)    &none         &none                         &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PIPE
+&none       &kp LS(HOME)        &kp LS(UP_ARROW)    &kp LS(END)    &none         &none                         &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PIPE
 &none       &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(RIGHT)  &none         &none                         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE
 &trans      &trans              &trans              &trans         &trans        &trans        &none    &none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none             &kp BACKSLASH      &none
                                                     &kp C_MENU     &trans        &trans        &none    &none  &mkp LCLK       &mkp RCLK       &trans
@@ -76,12 +87,5 @@
         extra_3 { status = "reserved"; };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        Mouse {
-            if-layers = <1>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
